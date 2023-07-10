@@ -8,3 +8,6 @@
 /dataSources.local.xml
 .idea/
 target/
+/dubbo-spring-boot-demo-consumer/target/
+/dubbo-spring-boot-demo-interface/target/
+/dubbo-spring-boot-demo-provider/target/
