@@ -1,6 +1,8 @@
 package org.zhl.dubbo.spring.boot.demo.consumer;
 
+import org.apache.dubbo.common.constants.ClusterRules;
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.rpc.cluster.Cluster;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.zhl.dubbo.spring.boot.demo.DemoService;
@@ -14,7 +16,7 @@ import java.util.Date;
 @Component
 public class Task implements CommandLineRunner {
 
-    @DubboReference
+    @DubboReference(timeout = 1000, cluster = ClusterRules.FAIL_BACK)
     private DemoService demoService;
 
     @Override
